@@ -1,0 +1,154 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+body {
+    background-color: #222328;
+    font-size: 3rem;
+    font-family: 'Lato', sans-serif;
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #202025;
+    border-bottom: 1px solid #151518;
+}
+
+.nav__link {
+    text-decoration: none;
+    padding: 1.5rem;
+    color: #acacb1;  
+    transition: all .3s; 
+}
+
+.nav__link:last-child {
+    margin-right: 1rem;
+}
+
+.nav__link:not(:last-child):after {
+    content: "";
+    border-right: 1px dashed #474749;
+    position: relative;
+    right: -1.5rem;
+}
+
+.nav__link:hover {
+    background-color: #18181a;
+    color: #d7d7e0;
+}
+
+.games {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    background-color: #222328;
+}
+
+.games .games__game {
+    cursor: default;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+    margin: 6rem 3rem 0;
+    padding: 0 5.4rem;
+    justify-content: flex-start;
+    text-decoration: none;
+    border: solid .2px #2f2f30;
+    max-width: 37.4rem;
+}
+
+
+.games .games__game:link, 
+.games .games__game:visited {
+    color: #acacb1;
+}
+
+.games .games__game .games__game__img {
+    max-width: 27rem;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 .5rem .5rem rgba(42, 42, 44, .8);
+    cursor: pointer;
+}
+
+.games .games__game .games__game__img:hover {
+    transform: translate(.7rem, -.7rem) scale(1.03);
+    transition: all .2s;
+}
+
+.games .games__game .games__game__header {
+    text-align: center;
+    font-size: 2.4rem;
+    text-decoration: none;
+    margin-bottom: 2rem;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.games .games__game .games__game__header:hover {
+    color: #e6e1e1;
+}
+
+.stream {
+    height: 80vh;
+}
+
+.stream__window {
+    height: 80vh;
+}
+
+.streams {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.streams__stream {
+    padding: 3rem;
+    margin: 3rem;
+    max-width: 76rem;
+
+}
+
+.streams__link {
+    text-decoration: none;
+}
+
+.streams__stream__img {
+
+}
+
+.streams__stream__heading {
+    font-size: 1.6rem;
+}
+
+.streams__stream__heading {
+    color: #acacb1;
+}
+
+.streams__stream__heading--title {
+    display: block;
+}
+
+.streams__stream__heading--title:hover {
+    color: #e6e1e1;
+}
+
+.streams__stream__heading--user {
+    display: block;
+}
+
+.streams__stream__heading--user:hover {
+    cursor: default;
+}
