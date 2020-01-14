@@ -1,16 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
-import axios from 'axios';
+import {Link} from 'react-router-dom';
+import api from "./api";
 
 function Games() {
 
-    {/* making api variable to create header with client ID */}
-    let api = axios.create({
-        headers: {
-            'Accept': 'application/vnd.twitchtv.v5+json',
-            'Client-ID': 'v72svl0nh7v182q5dzzngh9xrjoy42'
-        }
-    });
+
 
     const [games, setGames] = useState([]);
 
@@ -25,7 +19,7 @@ function Games() {
         const fetchData = async () => {
             const result = await api.get('https://api.twitch.tv/helix/games/top');  
             let resultArray = result.data.data;  
-            console.log(resultArray);
+            // console.log(resultArray);
             setGames(result.data.data);
         };
         fetchData();

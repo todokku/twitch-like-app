@@ -4,6 +4,7 @@ import Games from "./components/Games";
 import Game from "./components/Game";
 import Stream from "./components/Stream";
 import Streams from "./components/Streams";
+import Home from "./components/Home";
 
 function App() {
     return(
@@ -22,9 +23,7 @@ function App() {
                     <Route path="/streams/:id" component={Stream} />
                     <Route path="/streams" component={Streams} />
                     {/* home has to be last because jsx runs in order, if it'll be first it'll take action and skip others */}
-                    <Route path="/">
-                        <div>homee</div>
-                    </Route>
+                    <Route path="/" component={Home} />>
                 </Switch>
             </div>            
         </Router>

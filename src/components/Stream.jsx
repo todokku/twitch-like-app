@@ -1,6 +1,4 @@
-import React, {useState, useEffect} from 'react';
-import axios from 'axios';
-import {Link} from 'react-router-dom';
+import React, {useEffect} from 'react';
 
 function Stream({match, location}) {
 
@@ -20,7 +18,8 @@ function Stream({match, location}) {
         script2.innerHTML = `new Twitch.Embed("twitch-embed", {
             width: '100%',
             height: '100%',
-            channel: '${match.params.id}'
+            channel: '${match.params.id}',
+            theme: "dark"
           });`
 
         document.body.appendChild(script2);
@@ -28,7 +27,7 @@ function Stream({match, location}) {
 
     });
 
-    console.log(match.params.id);
+    // console.log(match.params.id);
 
     return(
         <div className="stream">   

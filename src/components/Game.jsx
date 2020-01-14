@@ -15,17 +15,17 @@ function Game({match, location}) {
     useEffect(() => {
         const fetchData = async () => {
             const gameData = await apiGame.get(`https://api.twitch.tv/helix/streams?first=20&game_id=${location.state.gameID}`)
-            console.log(gameData.data.data);
+            //console.log(gameData.data.data);
             
             setGameStreams(gameData.data.data)
         }
         fetchData()
     }, []); 
 
-   console.log(location.state);
+//    console.log(location.state);
 
     return(
-        <div className='streams'>
+        <section className='streams'>
             {/* deconstructing props into match and location
                 match is information contained as /games/:id, game name is stored as :id when it renders               
              */}
@@ -38,23 +38,23 @@ function Game({match, location}) {
             
 
             {gameStreams.map((stream, index) => {
-                {var streamThumbnail = stream.thumbnail_url.replace('{width}', 700).replace('{height}', 360)}
+                {var streamThumbnail = stream.thumbnail_url.replace('{width}', 490).replace('{height}', 252)}
                 return(
                     <div className="streams__stream" key={index}>
-                        <Link to={{
+                        <Link className="streams__link" to={{
                             pathname: '/streams/' + stream.user_name,
                             state: {streamName: stream.user_name}
                         }}>
                             <img className="streams__stream__img" src={streamThumbnail} alt="stream"/>
                             <div className="streams__stream__heading">
                                 <span className="streams__stream__heading--title">{stream.title}</span>
-                                <span className="streams__stream__heading--user">{stream.user_name} is streaming {match.params.id}</span>
+                                <span className="streams__stream__heading--user">{stream.user_name}</span>
                             </div>
                         </Link>
                     </div>           
             )})}
 
-        </div>
+        </section>
     )
 }
 
