@@ -1,0 +1,2 @@
+(this["webpackJsonptwitch-app"]=this["webpackJsonptwitch-app"]||[]).push([[0],{3:function(t,e,n){t.exports=n(8)},8:function(t,e,n){"use strict";n.r(e);var r=n(0),a=n.n(r),c=n(2);var p=function(){return a.a.createElement("div",null,"bbb")};n.n(c).a.render(a.a.createElement(p,null),document.getElementById("root"))}},[[3,1,2]]]);
+//# sourceMappingURL=main.fa17c07a.chunk.js.map
