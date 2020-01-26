@@ -13,6 +13,18 @@ html {
     font-size: 62.5%;
 }
 
+@media only screen and (max-width: 880px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    html {
+        font-size: 32.5%;
+    }
+}
+
 body {
     background-color: #222328;
     font-size: 3rem;
@@ -29,6 +41,7 @@ body {
     position: fixed;
     width: 100%;
     top: 0;
+    z-index: 1;
 }
 
 .nav__link {
@@ -54,6 +67,11 @@ body {
     color: #d7d7e0;
 }
 
+.active {
+    background-color: #18181a;
+    color: #d7d7e0;
+}
+
 /* HOME */
 
 .home {
@@ -67,6 +85,7 @@ body {
     animation-name: moveToRight;
     animation-duration: 1.2s;
     animation-timing-function: ease-out;
+    padding: 0 3rem;
 }
 
 .home__paragraph {
@@ -74,6 +93,7 @@ body {
     font-size: 1.6rem;
     animation-name: fadeIn;
     animation-duration: 1.4s;
+    padding: 0 3rem;
 }
 
 @keyframes fadeIn {
@@ -149,6 +169,18 @@ body {
     margin-bottom: 2rem;
     cursor: pointer;
     transition: all .3s;
+}
+
+@media (max-width: 880px) {
+
+    .games .games__game {
+        max-width: 32rem;
+    }
+
+    .games .games__game .games__game__header {
+        max-width: 20rem;
+        font-size: 2rem;
+    }
 }
 
 .games .games__game .games__game__header:hover {

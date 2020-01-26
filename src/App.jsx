@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom';
+import {BrowserRouter as Router, Switch, Route, NavLink} from 'react-router-dom';
 import Games from "./components/Games";
 import Game from "./components/Game";
 import Stream from "./components/Stream";
@@ -7,13 +7,14 @@ import Streams from "./components/Streams";
 import Home from "./components/Home";
 
 function App() {
+
     return(
         <Router>
             <div>
                 <nav className="nav">
-                    <Link className="nav__link" to="/">Home</Link>
-                    <Link className="nav__link" to="/games">Games</Link>
-                    <Link className="nav__link" to="/streams">Streams</Link>
+                    <NavLink className="nav__link" activeClassName="active" exact to="/">Home</NavLink>
+                    <NavLink className="nav__link" activeClassName="active" to="/games">Games</NavLink>
+                    <NavLink className="nav__link" activeClassName="active" to="/streams">Streams</NavLink>
                 </nav>
 
                 {/* Using react router to render different components when clicking right link */}

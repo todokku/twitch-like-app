@@ -31,8 +31,22 @@ function Games() {
      */}
     return(<div className='games'>
        {games.map((game, index) => {
-            {var art = game.box_art_url.replace('{width}', 270).replace('{height}', 400); 
-            var gameNameLink = '/games/' + game.name.replace(/ /g, '_')}
+            {
+                let width;
+                let height;
+                if (window.innerWidth <= 460 || window.outerWidth <= 460) {
+                    width = 203;
+                    height = 300;
+                } else if (window.innerWidth <= 880 || window.outerWidth <= 880) {
+                    width = 236;
+                    height = 345;
+                } else if (window.innerWidth >= 880 || window.outerWidth >= 880) {
+                    width = 270;
+                    height = 400;
+                }
+                var art = game.box_art_url.replace('{width}', width).replace('{height}', height); 
+                var gameNameLink = '/games/' + game.name.replace(/ /g, '_');
+            };
             return (
                             
                 <Link to={{
