@@ -12,7 +12,8 @@ function Games() {
     useEffect(() => {
         const fetchData = async () => {
             const result = await api.get('https://api.twitch.tv/helix/games/top');  
-            let resultArray = result.data.data;  
+            let resultArray = result.data.data; 
+
             // console.log(resultArray);
             setGames(result.data.data);
         };
