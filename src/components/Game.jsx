@@ -1,20 +1,15 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+import api from './api';
 import {Link} from 'react-router-dom';
 
 function Game({match, location}) {
-    let apiGame = axios.create({
-        headers: {
-            'Accept': 'application/vnd.twitchtv.v5+json',
-            'Client-ID': 'v72svl0nh7v182q5dzzngh9xrjoy42'
-        }
-    });
+
 
     const [gameStreams, setGameStreams] = useState([])
 
     useEffect(() => {
         const fetchData = async () => {
-            const gameData = await apiGame.get(`https://api.twitch.tv/helix/streams?first=20&game_id=${location.state.gameID}`)
+            const gameData = await api.get(`https://api.twitch.tv/helix/streams?first=20&game_id=${location.state.gameID}`)
             
             setGameStreams(gameData.data.data)
         }

@@ -9,12 +9,6 @@ function Games() {
     const [games, setGames] = useState([]);
 
 
-    {/* 
-        1) useEffect to fetchData on subpage load
-        2) set fetchData to async function
-        3) new result variable to store api.get
-        4) calling fetchData
-    */}
     useEffect(() => {
         const fetchData = async () => {
             const result = await api.get('https://api.twitch.tv/helix/games/top');  
@@ -25,10 +19,6 @@ function Games() {
         fetchData();
     }, []);
   
-
-    {/* 
-        Rendering every game card
-     */}
     return(<div className='games'>
        {games.map((game, index) => {
             {
@@ -53,7 +43,7 @@ function Games() {
                         pathname: gameNameLink,
                         state: { gameID: game.id}
                     }} className='games__game' key={index}>                   
-                    <img src={art} className="games__game__img"/>                   
+                    <img src={art} alt="game img" className="games__game__img"/>                   
                     <h1 className="games__game__header">{game.name}</h1>
                 </Link>
 
